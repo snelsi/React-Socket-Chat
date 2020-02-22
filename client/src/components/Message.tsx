@@ -20,7 +20,7 @@ export const Message: React.FC<MessageProps> = ({
     </OutcomeMessage>
   ) : (
     <IncomeMessage>
-      <div className="name">{name}</div>
+      <div className="name">{user}</div>
       <p className="messageText colorWhite">{ReactEmoji.emojify(text)}</p>
     </IncomeMessage>
   );
