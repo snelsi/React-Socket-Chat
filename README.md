@@ -1,9 +1,7 @@
-# Introduction
-This is a code repository for the corresponding video tutorial. 
+#This project is my variation of online chat.
 
-In this video, we will create a full Realtime Chat Application. We're going to use  React on the front end, with NodeJS + Socket.io web socket library on the back end. 
+It was based on Adrian Hajdin's [code](https://github.com/adrianhajdin/project_chat_application), but during the refactor process the frontend part was rewritten almost completely. The backend was left without big changes.
 
-By the end of this video, you will have a strong understanding of how to send and receive messages using web sockets and Socket.io to make any real-time application.
+This project has a lot of small UX details that are not taken into account by most such projects, such as focus on the input field when clicking inside the application, remembering the user's nickname, room, sounds of new messages, automatically expanding input field via shift + enter and so on.
 
-Setup:
-- run ```npm i && npm start``` for both client and server side to start the development server
+You can see the final result [here](https://snelsi-chat.now.sh/).
