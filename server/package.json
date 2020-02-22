@@ -1,10 +1,10 @@
 {
-  "name": "chat-backend-server",
+  "name": "chat_application_backend",
   "version": "1.0.0",
   "description": "This is the backend server for the 'chat.snelsi.now.sh' site, forked from Adrian Hajdin git hub project https://github.com/adrianhajdin/project_chat_application",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon index.js"
   },
   "keywords": [
     "socket.io",
@@ -20,8 +20,5 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
-  },
-  "engines": {
-    "node": "12.x"
   }
 }

@@ -42,6 +42,8 @@ io.on("connect", socket => {
   // When user sends new message, push it to all users in the room
   socket.on("sendMessage", (message, callback) => {
     const user = getUser(socket.id);
+    if (!user || user.room === undefined || user.name === undefined)
+      callback("No user was provided");
     io.to(user.room).emit("message", { user: user.name, text: message });
     callback();
   });
