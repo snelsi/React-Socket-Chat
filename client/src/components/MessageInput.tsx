@@ -61,11 +61,8 @@ const Textarea = styled(MUITextarea)({
   fontFamily: "inherit",
   resize: "none",
   minHeight: "48px",
-  padding: "12px 64px 16px 20px",
+  padding: "16px 64px 16px 16px",
   width: "100%",
-
-  position: "absolute",
-  bottom: "0",
 
   "&:focus": {
     outline: "none"
