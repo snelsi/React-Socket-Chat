@@ -37,7 +37,7 @@ export const MessageInput = ({ socket }) => {
           }
         }}
       />
-      <SendButton />
+      <SendButton onClick={sendMessage} />
     </Form>
   );
 };
