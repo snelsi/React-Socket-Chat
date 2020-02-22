@@ -34,6 +34,7 @@ export const Join: React.FC = () => {
           value={name}
           onChange={changeName}
           type="text"
+          autoFocus
         />
         <Input
           label="Room"
