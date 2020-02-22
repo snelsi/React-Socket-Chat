@@ -1,7 +1,7 @@
 {
   "name": "chat_application_frontend",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "private": false,
   "dependencies": {
     "@material-ui/core": "^4.9.3",
     "react": "^16.12.0",
