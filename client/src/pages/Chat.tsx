@@ -4,13 +4,14 @@ import { Header, MessageInput, Messages, UsersOnline } from "components";
 import { restrictedNames } from "interfaces";
 import styled from "styled-components";
 import io from "socket.io-client";
+import { newMessageNotification } from "scripts";
 
 let socket: SocketIOClient.Socket;
 
 const ENDPOINT = "https://snelsi-chat.herokuapp.com/";
 
 export const Chat: React.FC = () => {
-  const name = sessionStorage?.username;
+  const name = sessionStorage?.username.trim().toLowerCase();
   if (!name || restrictedNames.includes(name)) {
     console.warn("You nedd to be logged to enter chat");
     sessionStorage.removeItem("username");
@@ -45,6 +46,7 @@ const ChatElement: React.FC<ChatElementProps> = ({ name }) => {
 
   useEffect(() => {
     socket.on("message", message => {
+      newMessageNotification();
       setMessages([...messages, message]);
     });
 
@@ -57,7 +59,7 @@ const ChatElement: React.FC<ChatElementProps> = ({ name }) => {
       socket.off("message");
       socket.off("roomData");
     };
-  }, [messages]);
+  }, [messages, name]);
 
   if (redirect) return <Redirect to={redirect} />;
 
