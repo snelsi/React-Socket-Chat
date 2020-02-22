@@ -1,4 +1,4 @@
-#This project is my variation of online chat.
+# This project is my variation of online chat.
 
 It was based on Adrian Hajdin's [code](https://github.com/adrianhajdin/project_chat_application), but during the refactor process the frontend part was rewritten almost completely. The backend was left without big changes.
 
