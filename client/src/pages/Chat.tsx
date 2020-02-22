@@ -81,6 +81,7 @@ const ChatElement: React.FC<ChatElementProps> = ({ name }) => {
 const Grid = styled.div`
   transition: padding 0.2s ease;
   min-width: 320px;
+  position: relative;
   &.drawerOpen {
     padding-right: 300px;
   }
