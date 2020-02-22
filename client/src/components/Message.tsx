@@ -13,7 +13,7 @@ export const Message: React.FC<MessageProps> = ({
 }) => {
   if (restrictedNames.includes(user))
     return <AdminMessage>{text}</AdminMessage>;
-  const name = sessionStorage?.username.trim().toLowerCase();
+  const name = sessionStorage?.username?.trim().toLowerCase();
   return user === name ? (
     <OutcomeMessage>
       <p>{ReactEmoji.emojify(text)}</p>

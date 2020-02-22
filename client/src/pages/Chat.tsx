@@ -11,7 +11,7 @@ let socket: SocketIOClient.Socket;
 const ENDPOINT = "https://snelsi-chat.herokuapp.com/";
 
 export const Chat: React.FC = () => {
-  const name = sessionStorage?.username.trim().toLowerCase();
+  const name = sessionStorage?.username?.trim().toLowerCase();
   if (!name || restrictedNames.includes(name)) {
     console.warn("You nedd to be logged to enter chat");
     sessionStorage.removeItem("username");
