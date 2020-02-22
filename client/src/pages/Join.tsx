@@ -54,8 +54,7 @@ const Container = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
 `;
 const Form = styled.form`
   display: grid;

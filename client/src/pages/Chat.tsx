@@ -86,6 +86,7 @@ const Grid = styled.div`
   transition: padding 0.2s ease;
   min-width: 320px;
   position: relative;
+  height: 100%;
   &.drawerOpen {
     padding-right: 300px;
   }
@@ -93,6 +94,6 @@ const Grid = styled.div`
 const ChatContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height:  100%;
   overflow: hidden;
 `;
