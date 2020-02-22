@@ -12,9 +12,11 @@ const ENDPOINT = "https://snelsi-chat.herokuapp.com/";
 
 export const Chat: React.FC = () => {
   const name = sessionStorage?.username?.trim().toLowerCase();
+  const { pathname: room } = useLocation();
   if (!name || restrictedNames.includes(name)) {
     console.warn("You nedd to be logged to enter chat");
     sessionStorage.removeItem("username");
+    sessionStorage.setItem("room", room.slice(1));
     return <Redirect push to="/" />;
   }
   return <ChatElement name={name} />;

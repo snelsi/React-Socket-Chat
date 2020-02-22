@@ -9,7 +9,7 @@ import { restrictedNames } from "interfaces";
 export const Join: React.FC = () => {
   const [redirect, setRedirect] = useState(null);
   const [name, setName, changeName] = useInput(sessionStorage?.username || "");
-  const [room, , setRoom] = useInput("");
+  const [room, , setRoom] = useInput(sessionStorage?.room || "");
 
   const HandleUpload = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -19,6 +19,7 @@ export const Join: React.FC = () => {
       setName("");
     } else {
       sessionStorage.username = newName;
+      sessionStorage.removeItem(room);
       setRedirect(room);
     }
   };
