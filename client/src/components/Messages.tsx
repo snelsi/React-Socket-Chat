@@ -23,7 +23,6 @@ const Grid = styled.div`
   display: grid;
   grid-gap: 4px;
   padding: 20px;
-  min-height: 100%;
 `;
 const Container = styled(ScrollToBottom)`
   flex-grow: 1;
