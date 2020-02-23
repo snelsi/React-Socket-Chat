@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { User as IUser } from "interfaces";
 import { CloseButton } from "components";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 const OnlineIcon: React.FC = () => (
   <svg width="24" height="24" viewBox="0 0 24 24">
@@ -21,30 +22,32 @@ export const UsersOnline: React.FC<UsersOnlineProps> = ({
   users,
   onClose,
   onOpen
-}) => (
-  <Drawer
-    anchor="right"
-    variant="persistent"
-    open={open}
-    onOpen={onOpen}
-    onClose={onClose}
-    ModalProps={{
-      keepMounted: true
-    }}
-  >
-    <CloseButton onClick={onClose} color="grey" />
-    <h4>People online:</h4>
-    <List>
-      {users.map(({ name }) => (
-        <User key={name}>
-          <OnlineIcon />
-          {name}
-        </User>
-      ))}
-    </List>
-  </Drawer>
-);
-
+}) => {
+  const bigScreen = useMediaQuery("(min-width:620px)");
+  return (
+    <Drawer
+      anchor="right"
+      variant={bigScreen ? "persistent" : "temporary"}
+      open={open}
+      onOpen={onOpen}
+      onClose={onClose}
+      ModalProps={{
+        keepMounted: true
+      }}
+    >
+      <CloseButton onClick={onClose} color="grey" />
+      <h4>People online:</h4>
+      <List>
+        {users.map(({ name }) => (
+          <User key={name}>
+            <OnlineIcon />
+            {name}
+          </User>
+        ))}
+      </List>
+    </Drawer>
+  );
+};
 const Drawer = styled(SwipeableDrawer)({
   "& .MuiDrawer-paper": {
     padding: "20px",

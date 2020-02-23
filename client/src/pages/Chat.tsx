@@ -87,13 +87,15 @@ const Grid = styled.div`
   min-width: 320px;
   position: relative;
   height: 100%;
-  &.drawerOpen {
-    padding-right: 300px;
+  @media (min-width: 620px) {
+    &.drawerOpen {
+      padding-right: 300px;
+    }
   }
 `;
 const ChatContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height:  100%;
+  height: 100%;
   overflow: hidden;
 `;
